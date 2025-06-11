@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int calculateSum(int arr[], int size) {
+    int sum = 0;
+    for(int i = 0; i < size; ++i) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+double calculateAverage(int arr[], int size) {
+    int sum = calculateSum(arr, size); // 합계 함수 재사용
+    return static_cast<double>(sum) / size;
+}
+
+int main() {
+    const int SIZE = 5;
+    int numbers[SIZE];
+
+    cout << "숫자 5개를 입력하세요: ";
+    for(int i = 0; i < SIZE; ++i) {
+        cin >> numbers[i];
+    }
+
+    int sum = calculateSum(numbers, SIZE);
+    double average = calculateAverage(numbers, SIZE);
+
+    cout << "합계: " << sum << endl;
+    cout << "평균: " << average << endl;
+
+    return 0;
+}
