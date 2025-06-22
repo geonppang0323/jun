@@ -1,0 +1,43 @@
+#include "MyActor1.h"
+#include "Math/UnrealMathUtility.h"  // FMath::RandRange()
+
+AMyActor1::AMyActor1()
+{
+    PrimaryActorTick.bCanEverTick = false;
+    CurrentPosition = FVector2D(0, 0);
+}
+
+void AMyActor1::BeginPlay()
+{
+    Super::BeginPlay();
+
+    UE_LOG(LogTemp, Log, TEXT("이동 시작: (%d, %d)"),
+        static_cast<int32>(CurrentPosition.X),
+        static_cast<int32>(CurrentPosition.Y));
+
+    Move();
+}
+
+int32 AMyActor1::Step()
+{
+    return FMath::RandRange(0, 1);  // 0 또는 1 리턴
+}
+
+void AMyActor1::Move()
+{
+    for (int32 i = 0; i < 10; ++i)
+    {
+        int32 StepX = Step();
+        int32 StepY = Step();
+
+        CurrentPosition.X += StepX;
+        CurrentPosition.Y += StepY;
+
+        UE_LOG(LogTemp, Log, TEXT("Step %d -> 현재 위치: (%d, %d)"),
+            i + 1,
+            static_cast<int32>(CurrentPosition.X),
+            static_cast<int32>(CurrentPosition.Y));
+    }
+
+    UE_LOG(LogTemp, Log, TEXT("이동 종료"));
+}
