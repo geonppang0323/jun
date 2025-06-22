@@ -1,0 +1,141 @@
+//3번 과제
+//#include<iostream>
+//#include<algorithm>
+//
+//using namespace std;
+//
+//template<typename T>
+//
+//class simpleVector
+//{
+//private:
+//	T* data;
+//	int currentSize;
+//	int currentCapacity;
+//
+//public:
+//	simpleVector()
+//{
+//	data = new T[10];
+//	currentSize = 0;
+//	currentCapacity = 10;
+//}
+//
+//	simpleVector()
+//{
+//	data = new T[capacity];
+//	currentSize = 0;
+//	currentCapacity = capacity;
+//}
+//
+//	~simpleVector()
+//{
+//	delete data;
+//	data = nullptr;
+//}
+//
+//	T& operator[](int index)
+//{
+//	return data[index];
+//}
+//
+//void push_back(const T& value)
+//{
+//	if (currentSize >= currentCapacity)
+//	{
+//		return;
+//	}
+//
+//		data[currentSize] = value;
+//		++currentSize;
+//}
+//
+//void pop_back()
+//{
+//		--currentSize;
+//}
+//
+//int size()const
+//{
+//		return currentSize;
+//}
+//
+//int capacity()const
+//{
+//return currentCapacity;
+//}
+//
+//};
+//
+//int main()
+//{
+//	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF / _CRTDBG_LEAK_CHECK_DF);
+//
+//	simpleVector<int> sv1;
+//
+//	sv1.push_back(5);
+//	sv1.push_back(6);
+//	sv1.push_back(7);
+//
+//	sv1.pop_back();
+//
+//	for (int i = 0; i < sv1.size(); ++i)
+//		{
+//			cout << "벡터 1의: " << i << "번쨰 요소" << sv1[i] << endl;
+//		}
+//	
+//	cout << "벡터 1의 크기:" << sv1.size() << endl;
+//	cout << "벡터 1의 용량:" << sv1.capacity() << endl;
+//
+//
+//	cout << "\n================================" << endl;
+//}
+
+//4번 과제
+
+//#include<iostream>
+//#include<string>
+//#include<unordered_map>
+//#include<vector>
+//
+//using namespace std;
+//
+//class Book
+//{
+//public:
+//	string title;
+//	string author;
+//
+//	Book(const string& tittle, const string& author)
+//		: title(title), author(author)
+//	{
+//	}
+//};
+//
+//class Bookmanager
+//{
+//private:
+//	vector<Book> books;
+//
+//public:
+//	void addBook(const string& title, const string& author)
+//	{
+//		books.push_back(Book(title, author));
+//		cout << "책이 추가되었습니다:" << title << "by" << author << endl;
+//	}
+//
+//	void displayAllBook() const
+//	{
+//		if (books.empty())
+//		{
+//			cout << "현재 등록된 책이 없습니다." << endl;
+//			return;
+//		}
+//
+//		cout << "현재 도서 목록:" << endl;
+//		for (size_t i = 0; i < books.size(); i++)
+//		{
+//			cout << "-" << books[i].title << " by " << books[i].author << endl;
+//		}
+//	}
+//};
